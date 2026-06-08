@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card">
+        <p class="eyebrow">Simple & Fast</p>
+        <h1>TODO アプリ</h1>
+        <p class="lead">やることを追加して、完了済みもすぐ見えるようにしましょう。</p>
+
+        <form id="todo-form" class="todo-form">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="例: 朝の会議資料を確認する"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">追加</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="tablist" aria-label="フィルター">
+            <button class="filter active" data-filter="all" type="button">すべて</button>
+            <button class="filter" data-filter="active" type="button">未完了</button>
+            <button class="filter" data-filter="completed" type="button">完了済み</button>
+          </div>
+          <button id="clear-completed" class="ghost-button" type="button">完了済みを削除</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+        <footer class="footer">
+          <span id="todo-count">0件のタスク</span>
+          <span>ローカルストレージに保存されます</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
